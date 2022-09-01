@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package customermailapplication;
+// package customermailapplication;
 
 import java.util.Scanner;
 
@@ -24,7 +24,13 @@ public class CustomerMailApplication {
                 customer = new RegularCustomer();
                 break;
             //complete MountainCustomer
-            //complete DelinquentCustomer 
+            case "Mountain":
+                customer = new MountainCustomer();
+                break;
+            //complete DelinquentCustomer
+            case "Delinquent":
+                customer = new DelinquentCustomer();
+                break;
         }
     }
     public String generateMail() {
@@ -48,6 +54,7 @@ public class CustomerMailApplication {
                 break;
             
         }
+        inp.close();
         System.out.println(app.generateMail());        
     }
 }
