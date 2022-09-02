@@ -12,50 +12,26 @@ import java.util.Scanner;
  *
  * @author sarun
  */
-public class CustomerMailApplication {
-
-    /**
-     * @param args the command line arguments
-     */
-    // Customer customer;
-    // public void getCustomerTypeFromUser(String customerType) {
-    //     switch(customerType) {
-    //         case "Regular":
-    //             customer = new RegularCustomer();
-    //             break;
-    //         //complete MountainCustomer
-    //         case "Mountain":
-    //             customer = new MountainCustomer();
-    //             break;
-    //         //complete DelinquentCustomer
-    //         case "Delinquent":
-    //             customer = new DelinquentCustomer();
-    //             break;
-    //     }
-    // }
-    // public String generateMail() {
-    //     return customer.createMail();
-    // }
-    
+public class CustomerMailApplication {   
     public static void main(String[] args) {
-        // CustomerMailApplication app = new CustomerMailApplication();
+        Customer customer = null;
         CustomerFactory factory = new CustomerFactory();
         Scanner inp = new Scanner(System.in);
         System.out.print("Please choose customer type 1. Regular, 2. Mountain, 3. Delinquent ");
         int type = inp.nextInt();
         switch(type) {
             case 1:
-                factory.createCustomer("Regular");
+                customer = factory.createCustomer("Regular");
                 break;
             case 2:
-                factory.createCustomer("Mountain");
+                customer = factory.createCustomer("Mountain");
                 break;
             case 3:
-                factory.createCustomer("Delinquent");
+                customer = factory.createCustomer("Delinquent");
                 break;
             
         }
-        inp.close();
-        System.out.println(factory.generateMail());        
+        inp.close(); 
+        System.out.println(customer.createMail());  
     }
 }

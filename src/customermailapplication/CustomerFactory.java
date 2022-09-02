@@ -4,17 +4,21 @@ class CustomerFactory{
     Customer customer;
     public Customer createCustomer(String type){
         if(type.equals("Regular")){
-            return customer = new RegularCustomer();
+            customer = new RegularCustomer();
+            generateMail();
+            return customer;
         }
         else if(type.equals("Mountain")){
-            return customer = new MountainCustomer();
+            customer = new MountainCustomer();
+            generateMail();
+            return customer;
         }
         else if(type.equals("Delinquent")){
-            return customer = new DelinquentCustomer();
+            customer = new DelinquentCustomer();
+            generateMail();
+            return customer;
         }
-        else{
-            return null;
-        }
+        return null;
         
     }
 
